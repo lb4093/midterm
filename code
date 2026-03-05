@@ -1,0 +1,14 @@
+var bx;
+var by;
+var xOffset = 0;
+var yOffset = 0;
+
+function setup() {
+	createCanvas(800, 800);
+}
+
+function draw() {
+	background(mouseX / 3.2, mouseY / 3.2, (mouseX+mouseY)/6.4);
+	fill(mouseX - 300, mouseY - 300, mouseX + mouseY - 400);
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+}
