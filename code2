@@ -1,0 +1,86 @@
+var xOffset = 0;
+var yOffset = 0;
+var circleSize = 400;
+var animated = 0;
+var stable = 0;
+var y = 0;
+
+function setup() {
+	createCanvas(800, 800);
+}
+
+function draw() {
+	stable = frameCount % 32;
+	print(animated);
+	background(mouseX / 3.2, mouseY / 3.2, y);
+	fill(mouseX - 300, mouseY - 300, mouseX + mouseY - 400);
+	if (animated === 1) {
+		if (stable < 4) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 8) {
+			curve(mouseX, mouseY + 1900, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 12) {
+			curve(mouseX, mouseY + 1600, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 16) {
+			curve(mouseX, mouseY + 1900, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 20) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 24) {
+			curve(mouseX, mouseY + 1900, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 1900);
+		} else if (stable < 28) {
+			curve(mouseX, mouseY + 1900, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 1600);
+		} else if (stable < 32) {
+			curve(mouseX, mouseY + 1900, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 1900);
+		}
+	} else if (animated === 0) {
+		fill(mouseX - 300, mouseY - 300, mouseX + mouseY - 400);
+		if (stable < 2) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 4) {
+			curve(mouseX - 50, mouseY + 1900, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 6) {
+			curve(mouseX - 100, mouseY + 1600, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 8) {
+			curve(mouseX - 150, mouseY + 1300, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 10) {
+			curve(mouseX - 200, mouseY + 1000, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 12) {
+			curve(mouseX - 150, mouseY + 1300, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 14) {
+			curve(mouseX - 100, mouseY + 1600, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 16) {
+			curve(mouseX - 50, mouseY + 1900, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 18) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX, mouseY + 2200);
+		} else if (stable < 20) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX + 50, mouseY + 1900);
+		} else if (stable < 22) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX + 100, mouseY + 1600);
+		} else if (stable < 24) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX + 150, mouseY + 1300);
+		} else if (stable < 26) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX + 200, mouseY + 1000);
+		} else if (stable < 28) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX + 150, mouseY + 1300);
+		} else if (stable < 30) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX + 100, mouseY + 1600);
+		} else if (stable < 32) {
+			curve(mouseX, mouseY + 2200, mouseX - 200, mouseY, mouseX + 200, mouseY, mouseX + 50, mouseY + 1900);
+		}
+	}
+}
+
+function mouseClicked() {
+	animated = 1;
+}
+
+function mouseDragged() {
+	animated = 0;
+}
+
+function keyPressed() {
+	y = y + 100;
+	if (y > 250) {
+		y = 0;
+	}
+}
